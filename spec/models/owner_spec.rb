@@ -14,4 +14,7 @@ describe Owner do
   it { should_not have_valid(:email).when(*blank_values) }
   it { should_not have_valid(:email).when(*bad_emails) }
 
+  it { should have_many(:pairings) }
+  it { should have_many(:dogs).through(:pairings) }
+
 end
